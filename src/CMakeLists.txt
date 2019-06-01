@@ -273,7 +273,8 @@ target_link_libraries(rigel_core
     Boost::boost
 
     PRIVATE
-    std::filesystem
+    #std::filesystem
+    stdc++fs
     dbopl
     speex_resampler
     glad

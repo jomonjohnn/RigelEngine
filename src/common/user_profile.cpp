@@ -26,7 +26,7 @@ RIGEL_DISABLE_WARNINGS
 RIGEL_RESTORE_WARNINGS
 
 #include <iostream>
-#include <filesystem>
+#include <experimental/filesystem>
 #include <fstream>
 
 
@@ -309,7 +309,7 @@ void UserProfile::loadFromDisk() {
 
 
 UserProfile loadOrCreateUserProfile(const std::string gamePath) {
-  namespace fs = std::filesystem;
+  namespace fs = std::experimental::filesystem;;
 
   auto deleter = [](char* path) { SDL_free(path); };
   const auto pPreferencesDirName = std::unique_ptr<char, decltype(deleter)>{
